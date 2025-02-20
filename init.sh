@@ -47,6 +47,14 @@ su - $ACTUAL_USER -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmy
 print_status "Installing Powerlevel10k theme..."
 su - $ACTUAL_USER -c "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${USER_HOME}/.oh-my-zsh/custom/themes/powerlevel10k"
 
+# Install zsh-autosuggestions
+print_status "Installing zsh-autosuggestions..."
+su - $ACTUAL_USER -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${USER_HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+
+# Install zsh-syntax-highlighting
+print_status "Installing zsh-syntax-highlighting..."
+su - $ACTUAL_USER -c "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${USER_HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+
 # Install fnm
 print_status "Installing fnm..."
 su - $ACTUAL_USER -c "curl -fsSL https://fnm.vercel.app/install | bash"
