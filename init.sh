@@ -49,7 +49,7 @@ su - $ACTUAL_USER -c "git clone --depth=1 https://github.com/romkatv/powerlevel1
 
 # Install fnm
 print_status "Installing fnm..."
-su - $ACTUAL_USER -c "curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell"
+su - $ACTUAL_USER -c "curl -fsSL https://fnm.vercel.app/install | bash"
 
 # Create custom .zshrc
 print_status "Creating custom .zshrc..."
