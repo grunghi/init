@@ -97,22 +97,29 @@ EOL
 
 # Set correct ownership
 chown $ACTUAL_USER:$ACTUAL_USER "${USER_HOME}/.zshrc"
+cat > "${USER_HOME}/init_node.sh" << 'EOL'
+#!/bin/zsh
+source ~/.zshrc
+fnm install --lts
+fnm use lts-latest
+corepack enable
+npm install -g @antfu/ni
+EOL
+
+# Make the init script executable and set ownership
+chmod +x "${USER_HOME}/init_node.sh"
+chown $ACTUAL_USER:$ACTUAL_USER "${USER_HOME}/init_node.sh"
 
 # Change default shell to zsh for the user
 print_status "Changing default shell to zsh..."
 chsh -s $(which zsh) $ACTUAL_USER
 
-# Install Node.js using fnm
-print_status "Installing latest LTS version of Node.js..."
-su - $ACTUAL_USER -c "source ${USER_HOME}/.zshrc && fnm install --lts"
+# Run the initialization script as the actual user
+print_status "Installing Node.js and related tools..."
+su - $ACTUAL_USER -c "${USER_HOME}/init_node.sh"
 
-# Enable corepack
-print_status "Enabling corepack..."
-su - $ACTUAL_USER -c "source ${USER_HOME}/.zshrc && corepack enable"
-
-# Install @antfu/ni
-print_status "Installing @antfu/ni..."
-su - $ACTUAL_USER -c "source ${USER_HOME}/.zshrc && sudo npm install -g @antfu/ni"
+# Clean up the temporary script
+rm "${USER_HOME}/init_node.sh"
 
 # Final instructions
 print_status "Installation complete!"
