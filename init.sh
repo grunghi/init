@@ -97,6 +97,8 @@ EOL
 
 # Set correct ownership
 chown $ACTUAL_USER:$ACTUAL_USER "${USER_HOME}/.zshrc"
+
+# Create a temporary script to initialize fnm and install Node.js
 cat > "${USER_HOME}/init_node.sh" << 'EOL'
 #!/bin/zsh
 source ~/.zshrc
