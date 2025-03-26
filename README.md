@@ -1,6 +1,6 @@
 # Initialization Script
 
-This script sets up a development environment with Zsh, Oh My Zsh, Powerlevel10k theme, fnm (Fast Node Manager), and Node.js. It also installs some useful plugins and tools.
+This script sets up a command line environment with Zsh, Oh My Zsh, Powerlevel10k theme, fnm (Fast Node Manager), and Node.js. It also installs some useful plugins and tools.
 
 ## Prerequisites
 
