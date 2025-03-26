@@ -10,7 +10,7 @@ This script sets up a command line environment with Zsh, Oh My Zsh, Powerlevel10
 ## Usage
 
    ```bash
-   sudo wget -qO- https://raw.githubusercontent.com/grunghi/init/main/init.sh | bash
+   wget -qO- https://raw.githubusercontent.com/grunghi/init/main/init.sh | sudo bash
    ```
 
 ## What the Script Does
