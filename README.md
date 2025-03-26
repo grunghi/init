@@ -9,11 +9,8 @@ This script sets up a development environment with Zsh, Oh My Zsh, Powerlevel10k
 
 ## Usage
 
-1. Clone the repository or download the `init.sh` script.
-2. Open a terminal and navigate to the directory containing `init.sh`.
-3. Run the script with root privileges:
    ```bash
-   sudo ./init.sh
+   sudo wget -qO- https://raw.githubusercontent.com/grunghi/init/main/init.sh | bash
    ```
 
 ## What the Script Does
