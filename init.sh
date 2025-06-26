@@ -29,11 +29,11 @@ USER_HOME="/home/$ACTUAL_USER"
 print_status "Installing required packages..."
 if command -v apt-get >/dev/null; then
     apt-get update
-    apt-get install -y zsh curl git
+    apt-get install -y zsh curl git micro
 elif command -v dnf >/dev/null; then
-    dnf install -y zsh curl git
+    dnf install -y zsh curl git micro
 elif command -v yum >/dev/null; then
-    yum install -y zsh curl git
+    yum install -y zsh curl git micro
 else
     print_error "Unsupported package manager"
     exit 1
